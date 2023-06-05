@@ -1,8 +1,8 @@
 {
-  "name": "basic-cdk-examples",
+  "name": "ts-basic-cdk-examples",
   "version": "0.1.0",
   "bin": {
-    "basic-cdk-examples": "bin/basic-cdk-examples.js"
+    "ts-basic-cdk-examples": "bin/ts-basic-cdk-examples.js"
   },
   "scripts": {
     "build": "tsc",
