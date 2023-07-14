@@ -2,7 +2,8 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import {
   aws_s3 as s3,
-  aws_s3_deployment as s3Deploy
+  aws_s3_deployment as s3Deploy,
+  RemovalPolicy
 } from 'aws-cdk-lib'
 
 export class TsBasicCdkExamplesStack extends cdk.Stack {
@@ -17,6 +18,7 @@ export class TsBasicCdkExamplesStack extends cdk.Stack {
       websiteErrorDocument: 'index.html',
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS,
       accessControl: s3.BucketAccessControl.BUCKET_OWNER_FULL_CONTROL,
+      removalPolicy: RemovalPolicy.DESTROY
     })
 
 
