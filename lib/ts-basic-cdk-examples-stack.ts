@@ -11,8 +11,8 @@ export class TsBasicCdkExamplesStack extends cdk.Stack {
     super(scope, id, props);
 
     // create s3 bucket
-    const bucket = new s3.Bucket(this, 'CDKStaticHostingBucket', {
-      bucketName: 'cdk-static-hosting-bucket',
+    const bucket = new s3.Bucket(this, 's3DeployPOCBucket', {
+      bucketName: 's3-deploy-hosting-bucket',
       publicReadAccess: true,
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'index.html',
@@ -23,8 +23,8 @@ export class TsBasicCdkExamplesStack extends cdk.Stack {
 
 
     // upload static website
-    new s3Deploy.BucketDeployment(this, 'StaticHostingDeploy', {
-      sources: [s3Deploy.Source.asset('./dist')],
+    new s3Deploy.BucketDeployment(this, 's3DeployPOCDeploy', {
+      sources: [s3Deploy.Source.asset('./web/dist')],
       destinationBucket: bucket
     })
   }
